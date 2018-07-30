@@ -1,4 +1,1 @@
-initial
-atul 
-process
-start
+In master mode
