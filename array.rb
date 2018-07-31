@@ -15,4 +15,6 @@ ary = [  "fred", 10, 3.14, "This is a string", "last element", ]
 ary.each do |i|
    puts i
 end
-
+///
+   h = {"one" :"1" , "two" : "2"}
+put h["two"]
