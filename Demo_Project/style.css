@@ -1,0 +1,18 @@
+.container
+{
+    margin-left: 20%;
+    display: none;
+}
+.jumbotron
+{
+    margin-right: 30%;
+}
+#editModal
+{
+    display: none;
+}
+body
+{
+    background-image: url("18560fdccac9aa7.jpg");
+    background-size: 100%;
+}
