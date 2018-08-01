@@ -4,3 +4,5 @@ conflict in master
 this edit made by branch b
 
 this is made by branch a
+
+edit made by remote master
