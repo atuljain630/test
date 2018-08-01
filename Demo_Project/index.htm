@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo Project</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" id="GemsEssenceBtn" href="#">Gems Essence</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" id="signUpBtn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#" id="loginBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <!-- <li><a href="#" id="registered">Registered Users</a></li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" id="loginContainer">
+      <div class="jumbotron">
+       <form class="form-horizontal" id="loginForm">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email:</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="loginEmail">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="loginPassword">Password:</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" name="loginPassword">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-10">
+            <button type="submit" id="login_submit" class="btn btn-default" style="margin-left: 20%" >Submit</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <div class="container" id="signUpContainer">
+      <div class="jumbotron">
+        <form class="form-horizontal" id="signUpForm">
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="name">Name:</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="name" placeholder="Enter Name Here..." name="name" required="" pattern="[A-Za-z]{2,}" title="Username should only contain alphabets and minimum length 2">
+          </div>
+        </div>
+
+         <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email:</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="email" placeholder="Enter Email Here..." name="email" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+          </div>
+        </div>
+
+         <div class="form-group">
+          <label class="control-label col-sm-2" for="city">City:</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="city" placeholder="Enter City Here..." name="city" required="">
+          </div>
+        </div>
+
+        <div class="form-group">
+        <label class="control-label col-sm-2"  for="password">Password:</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="signUpPassword" minlength="5" placeholder="Enter Password Here..." name="signUpPassword" required="">
+          </div>
+        </div>
+
+         <div class="form-group">
+        <label class="control-label col-sm-2" for="password">Confirm Password:</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="signUpConfirmPassword" minlength="5" placeholder="Again Enter Password..." name="signUpConfirmPassword" required="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-default" style="margin-left: 21%">Submit</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <div class="container" id="UserInfoTable">
+
+     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" >Add User</button>
+
+     <button type="button" class="btn btn-info btn-lg" id="logoutBtn">Log Out</button>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <!-- <h4 class="modal-title">Modal Header</h4> -->
+            </div>
+            <div class="modal-body">
+              <!-- <p>Some text in the modal.</p> -->
+              <form class="form-horizontal" id="addUserRegistrationForm">
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="name">Name:</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="addUserName" placeholder="Enter Name Here..." name="name" required="">
+                      </div>
+                    </div>
+
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="email">Email:</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control" id="addUserEmail" placeholder="Enter Email Here..." name="email" required="">
+                      </div>
+                    </div>
+
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="city">City:</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="addUserCity" placeholder="Enter City Here..." name="city" required="">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-default" style="margin-left: 21%">Submit</button>
+                      </div>
+                    </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="modal fade" id="editModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <!-- <h4 class="modal-title">Modal Header</h4> -->
+            </div>
+            <div class="modal-body">
+              <!-- <p>Some text in the modal.</p> -->
+              <form class="form-horizontal" id="editRegistrationForm">
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="name">Name:</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="editName" placeholder="Enter Name Here..." name="name" required="">
+                      </div>
+                    </div>
+
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="email">Email:</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control" id="editEmail" placeholder="Enter Email Here..." name="email" required="">
+                      </div>
+                    </div>
+
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="city">City:</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="editCity" placeholder="Enter City Here..." name="city" required="">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-default" style="margin-left: 21%">Update</button>
+                      </div>
+                    </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="jumbotron">
+          <table class="table table-striped" id="userTable" >
+            <thead>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>City</th>
+              <th></th>
+            </thead>
+
+            <tbody >
+              <tr>
+                <td>1</td>
+                <td>Atul</td>
+                <td>atuljain630@gmail.com</td>
+                <td>Indore</td>
+                <td><button class="editButton">Edit</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Atul</td>
+                <td>atuljain630@gmail.com</td>
+                <td>Indore</td>
+                <td><button class="editButton">Edit</button></td>
+              </tr>
+
+            </tbody>
+          </table>
+    </div>
+    </div>
+
+</body>
+</html>
+
